@@ -1,0 +1,152 @@
+/****** General ******/
+
+html, body {
+	height: 100%;
+	overflow: scroll;
+	min-height: 460px;
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.centerDiv
+{
+	/*
+	http://stackoverflow.com/questions/114543/how-to-center-a-div-in-a-div-horizontally/16144913#16144913
+	*/
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: distribute;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.vCenterText {
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-family: inherit;
+	font-size: inherit;	
+}
+
+/****** Body ******/
+
+/*
+.viewport {
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: black;
+}
+*/
+
+.main {
+	clear: both;
+	text-align: center;
+	border: 0;
+	border-color: black;
+	max-width: 400px;
+	min-width: 340px;
+	height: 430px;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background-color: #eee;
+}
+
+.scoreboard {
+	height: 1.2em;
+	background-color: #aaa;
+	font-size: medium;
+}
+
+.scoreboardItem {
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	font-size: medium;
+}
+
+.titleCard {
+	width: 100%;
+	height: 100%;
+	background-image: url('../assets/images/weather.png');	
+	background-color: #2ce;
+}
+
+.title {
+	padding: 20px 0 15px 0;
+	font-family: Trade Winds, sans-serif;
+	font-size: xx-large;	
+}
+
+.startLoading {
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+}
+
+.optionList {
+	width: 100%;
+	text-align: center;
+}
+
+.option {
+	height: 2em;
+	width: 90%;
+	background-color: white;
+	margin: .5em;
+}
+
+.correct {
+	background-color: green;
+}
+
+.chosen {
+	font-weight: bold;
+}
+
+/****** Footer ******/
+footer {	
+	padding: 0.3em 0 0.3em 0;
+	color: #fff;
+	background-color: #333;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-family: Averia Libre, serif;
+	font-size: small;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
