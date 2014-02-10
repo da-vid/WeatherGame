@@ -91,12 +91,12 @@ quicklist.controller('gameController', function($scope, $http){
 
     };
 
-    mockTodaysWeather = function mockTodaysWeather(city){
-        nextCityWeather.high = 99;            
-        nextCityWeather.low = 9;
-        $scope.ajaxLoading = false;
-        $scope.waitForAjax = false;
-    };
+    // mockTodaysWeather = function mockTodaysWeather(city){
+    //     nextCityWeather.high = 99;            
+    //     nextCityWeather.low = 9;
+    //     $scope.ajaxLoading = false;
+    //     $scope.waitForAjax = false;
+    // };
 
     cityNotAlreadyInOptionsOrAnswerList = function cityNotAlreadyInOptionsOrAnswerList(city) {
         var retVal = true;
