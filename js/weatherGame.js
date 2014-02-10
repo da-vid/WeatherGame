@@ -1,10 +1,10 @@
-var quicklist = angular.module('weatherGame', []);
+var quicklist = angular.module('weatherGame', ['ui.bootstrap']);
 
 quicklist.controller('gameController', function($scope, $http){
 
     // Game configuration
     $scope.maxRounds = 5;    
-    numOptions = 4;    
+    numOptions = 3;    
     $scope.cities = ["Ann Arbor", "Atlanta", "Boston", "Charlotte", "Chicago", "Cleveland", "Dallas", 
                     "Denver", "Houston", "Las Vegas", "Los Angeles", "Memphis", "Minneapolis", "Miami", "New Orleans",
                      "New York", "Phoenix", "Salt Lake City", "San Diego", "San Francisco", "Tampa", "Washington DC"];

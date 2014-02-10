@@ -1,51 +1,71 @@
 <!doctype html>
 <html ng-app="weatherGame">
 	<head>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>		
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">		
+		<script type="text/javascript" src="js/ui-bootstrap-tpls-0.9.0.min.js"></script>		
 		<script type="text/javascript" src="js/weatherGame.js"></script>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">		
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">		
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
   	<body ng-controller="gameController" ng-init="loadNextQuestion()">
   		<div class="main">	  		
-			<div class="titleCard" ng-show="gameState == 'newGame'">				
+			<div class="titleCard" ng-show="gameState == 'newGame'">
+				<div class = "titleBackground"></div>				
 				<div class="title">
-					Weather Game!
+					under the weather
 				</div>
-				<div class="buttonStart" ng-click="startGame()" ng-show="!waitForAjax">Start Game</div>
-				<div class="startLoading" ng-show="waitForAjax">
-					<i class="fa fa-spinner fa-spin fa-5x"></i>
+				<div class="subtitle">
+					a weather quiz
+				</div>
+				<div class="startLoading">
+						<div class="buttonStart" ng-click="startGame()" ng-show="!waitForAjax">
+							<div class="centerTable"><div class="vCenterText">start game</div></div>
+						</div>
+					<i class="fa fa-spinner fa-spin fa-5x" ng-show="waitForAjax"></i>
 				</div>	
 			</div>
 
 			<div class="gamePanel" ng-hide="(gameState == 'newGame')">
-				<div class="scoreboard">	  			  		
-		  			<div class="scoreboardItem">Round: {{round}} / {{maxRounds}}</div>
-		  			<div class="scoreboardItem">Score: {{score}}</div>
-		  			<div class="scoreboardItem">High Score: {{bestScore}}</div>
-		  		</div>
+				<div class="scoreBarContainer">
+					<div class ="roundBar">   
+						<progressbar max="maxRounds" value="round" type="warning" ng-if="gameState!='gameOver'">&nbsp;&nbsp;&nbsp;round {{round}}</progressbar>
+						<progressbar max="maxRounds" value="round" type="danger" ng-if="gameState=='gameOver'">&nbsp;&nbsp;&nbsp;Game Over</progressbar>
+					</div>
+					<div class="scoreBar">
+						<progressbar max="maxRounds" value="score" type="success">&nbsp;&nbsp;{{score}} correct </progressbar>
+					</div>
+				</div>
+		  			<div class="highScore">high score: {{bestScore}}</div>
 		  		<div class="gameLoading" ng-show="waitForAjax">
 					<i class="fa fa-spinner fa-spin fa-5x" ng-show="waitForAjax"></i>
 				</div>	
 		  		<div class="gameboard" ng-hide = "((gameState == 'question') && waitForAjax)">
-					<div class="weather">
-					In which city is this today's weather?
-						<div class="weatherHigh">High:{{correctCityWeather.high}}</div>
-						<div class="weatherLow">Low:{{correctCityWeather.low}}</div>
-						<div class="weatherCondition">{{correctCityWeather.condition}}</div>			
+					<div class="prompt">
+						<div class="message">This is today's weather in which city?</div>
+						<div class="weatherTemp high">
+							<div class="tempLabel">High</div>
+							<div class="temp">{{correctCityWeather.high}}&deg; F</div>
+						</div>
+						<div class="weatherTemp low">
+							<div class="tempLabel">Low</div>
+							<div class="temp">{{correctCityWeather.low}}&deg; F</div>
+						</div>
+						<div><div class="weatherCondition">{{correctCityWeather.condition}}</div></div>			
 					</div>		
 					<div class="optionList centerDiv" ng-repeat = "o in options">
 						<div ng-class="{option:true, correct: (gameState == 'answer' || gameState == 'gameOver') && (o.id == correctCityIdx), chosen: (gameState == 'answer' || gameState == 'gameOver') && (o.id == guessIdx)}" ng-click="guess(o.id)">
-								{{o.city}}
+								<div class="vCenterText">{{o.city}}</div>
 						</div>				
 					</div>
 				</div>
 			</div>
-			<div class="nextRound" ng-show="(gameState == 'answer') && (round < maxRounds)" ng-click="beginRound()">
-				Next Round
+			<div class="buttonNext buttonNextRound" ng-show="(gameState == 'answer') && (round < maxRounds)" ng-click="beginRound()">
+				<div class="vCenterText">Next Round</div>
 			</div>
-			<div class="nextGame" ng-show="(gameState == 'gameOver')" ng-click="startGame()">
-				Start Over
+			<div class=" buttonNext buttonNextGame" ng-show="(gameState == 'gameOver')" ng-click="startGame()">
+				<div class="vCenterText">Play Again</div>
 			</div>
 		</div>
 	</body>

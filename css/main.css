@@ -1,3 +1,13 @@
+@font-face {
+font-family: BebasNeue;
+src: url("fonts/BebasNeue.otf") format("opentype");
+}
+
+@font-face {
+font-family: Junction;
+src: url("fonts/Junction.otf") format("opentype");
+}
+
 /****** General ******/
 
 html, body {
@@ -47,14 +57,19 @@ a {
     align-items: center;
 }
 
-.vCenterText {
+.centerTable {
+	display: table;
 	width: 100%;
 	height: 100%;
+	margin: auto;
+}
+
+.vCenterText {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
 	font-family: inherit;
-	font-size: inherit;	
+	font-size: inherit;
 }
 
 /****** Body ******/
@@ -74,79 +89,243 @@ a {
 	border: 0;
 	border-color: black;
 	max-width: 400px;
-	min-width: 340px;
+	min-width: 320px;
 	height: 430px;
 	overflow: auto;
 	margin: auto;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background-color: #eee;
 }
 
 .scoreboard {
-	height: 1.2em;
-	background-color: #aaa;
 	font-size: medium;
 }
 
-.scoreboardItem {
-	display: inline-block;
+.scoreBarContainer {
+	width: 90%;
+	margin: auto;
+	padding-top: 10px;
+}
+
+.highScore {
 	padding: 0 10px 0 10px;
 	font-size: medium;
+	letter-spacing: 1px
 }
 
 .titleCard {
 	width: 100%;
 	height: 100%;
+}
+
+.titleBackground {
+	width: 100%;
+	height: 100%;
 	background-image: url('../assets/images/weather.png');	
 	background-color: #2ce;
+	opacity: 0.3;
+	border-radius: 20px;
 }
 
 .title {
-	padding: 20px 0 15px 0;
-	font-family: Trade Winds, sans-serif;
+	position: absolute;
+	width: 100%;
+	margin: auto;
+	top: 50px;
+	font-family: sans-serif;
+	font-weight: bold;
+	letter-spacing: -1px;
 	font-size: xx-large;	
 }
 
-.startLoading {
+.subtitle {
 	position: absolute;
-	bottom: 20px;
-	right: 30px;
+	width: 100%;
+	margin: auto;
+	top: 100px;
+	font-family: Junction, sans-serif;
+	font-weight: bold;
+	font-size: large;	
+}
+
+.gamePanel {
+	position: relative;
+}
+
+.startLoading {
+	display: table;
+	position: absolute;	
+	width: 100%;
+	margin: auto;	
+	bottom: 30px;
+	text-align: center;
+}
+
+.buttonStart {
+	display: inline-block;
+	height: 3em;
+	width: 8em;
+	font-size: xx-large;
+	letter-spacing: 2px;
+	border-radius: 10px;
+	background-color: #ff9;
+}
+
+.buttonStart:hover {	
+	background-color: #ffc;
+}
+
+.prompt {
+	width: 90%;
+	margin: auto;
+	margin-top: 12px;
+}
+
+.message {
+	font-family: Junction, sans-serif;
+	font-size: medium;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.weatherTemp {
+	display: inline-block;
+	margin: 5px 10px 5px 10px;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.high {	
+	background-color: #e6cccc;
+}
+
+.low {	
+	background-color: #cccce6;
+}
+
+.tempLabel {
+	font-size: 15px;
+	margin-bottom: 5px;
+	letter-spacing: 2px;
+}
+
+.temp {
+	font-size: 30px;
+}
+
+.weatherCondition {
+	display: inline-block;
+	border-radius: 10px;
+	font-family: Junction, sans-serif;
+	font-size: small;
+	padding: 5px 15px 5px 15px;
 }
 
 .optionList {
 	width: 100%;
 	text-align: center;
+	margin-top: 10px;
 }
 
 .option {
-	height: 2em;
-	width: 90%;
-	background-color: white;
-	margin: .5em;
+	height: 1.6em;
+	width: 70%;
+	display: table;
+	font-size: 20px;
+	border-radius: 10px;
+	background-color: #B2D1FF;
+	letter-spacing: 2px;
+}
+
+.option:hover {
+	cursor: pointer;
+	background-color: #C9DFFF;
 }
 
 .correct {
-	background-color: green;
+	background-color: #94BF94;
 }
 
 .chosen {
 	font-weight: bold;
+	background-color: #F0B2B2;
 }
 
-/****** Footer ******/
-footer {	
-	padding: 0.3em 0 0.3em 0;
-	color: #fff;
-	background-color: #333;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	text-align: center;
-	font-family: Averia Libre, serif;
-	font-size: small;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
+.chosen:hover {
+	background-color: #F0B2B2;
+}
+
+.correct.chosen {
+	font-weight: bold;
+	background-color: #94BF94;
+}
+
+.correct:hover {
+	background-color: #94BF94;
+}
+
+.buttonNext {
+	margin: auto;
+	margin-top: 10px;
+	display: table;
+	height: 2.5em;
+	width: 8em;
+	font-size: 16px;
+	letter-spacing: 2px;
+	border-radius: 10px;
+}
+
+.buttonNextRound {
+	background-color: #ddd;
+}
+
+.buttonNextRound:hover {	
+	background-color: #eee;
+}
+
+.buttonNextGame {	
+	background-color: #ff9;
+}
+
+.buttonNextGame:hover {	
+	background-color: #ffc;
+}
+
+/****** Overriding Bootstrap Progress Bar ******/
+.progress {
+	margin-bottom: 5px;
+}
+
+.progress-bar {
+	white-space: nowrap;
+	-webkit-box-shadow: none;
+		box-shadow: none;
+	color: black;
+	text-align: left;
+	letter-spacing: 2px;
+}
+
+.progress-bar-warning {
+  background-color: #ccc;
+}
+
+.progress-bar-success {
+  background-color: #94BF94;
+}
+
+.roundBar .progress {
+	height: 15px;
+}
+.scoreBar .progress {
+	height: 30px;
+}
+
+.roundBar .progress-bar {
+	font-size: 15px;
+	line-height: 17px;
+}
+
+.scoreBar .progress-bar {
+	font-size: 20px;
+	line-height: 34px;
 }
