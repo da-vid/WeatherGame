@@ -1,3 +1,6 @@
+
+/****** Fonts ******/
+
 @font-face {
 font-family: BebasNeue;
 src: url("fonts/BebasNeue.otf") format("opentype");
@@ -74,43 +77,18 @@ a {
 
 /****** Body ******/
 
-/*
-.viewport {
-	min-height: 100%;
-	width: 100%;
-	position: relative;
-	background-color: black;
-}
-*/
-
 .main {
 	clear: both;
 	text-align: center;
 	border: 0;
 	border-color: black;
-	max-width: 400px;
+	max-width: 540px;
 	min-width: 320px;
 	height: 430px;
 	overflow: auto;
 	margin: auto;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-}
-
-.scoreboard {
-	font-size: medium;
-}
-
-.scoreBarContainer {
-	width: 90%;
-	margin: auto;
-	padding-top: 10px;
-}
-
-.highScore {
-	padding: 0 10px 0 10px;
-	font-size: medium;
-	letter-spacing: 1px
 }
 
 .titleCard {
@@ -148,10 +126,6 @@ a {
 	font-size: large;	
 }
 
-.gamePanel {
-	position: relative;
-}
-
 .startLoading {
 	display: table;
 	position: absolute;	
@@ -173,6 +147,21 @@ a {
 
 .buttonStart:hover {	
 	background-color: #ffc;
+}
+
+.gamePanel {
+	position: relative;
+}
+
+.scoreBarContainer {
+	width: 90%;
+	margin: auto;
+}
+
+.highScore {
+	padding: 0 10px 0 10px;
+	font-size: medium;
+	letter-spacing: 1px
 }
 
 .prompt {
