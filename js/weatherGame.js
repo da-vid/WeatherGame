@@ -45,13 +45,6 @@ quicklist.controller('gameController', function($scope, $http){
         checkForAjax();
     };
 
-    function beginRoundPart2() {
-        $scope.correctCityWeather = nextCityWeather;
-        $scope.correctCityIdx = nextCityIdx;
-        $scope.options = nextOptions.slice(0);  
-        $scope.loadNextQuestion();  
-    }
-
     function checkForAjax() { //http:stackoverflow.com/questions/951021/what-do-i-do-if-i-want-a-javascript-version-of-sleep
         if ($scope.waitForAjax) {
             setTimeout(checkForAjax, 50); 
@@ -59,6 +52,13 @@ quicklist.controller('gameController', function($scope, $http){
         else {
             beginRoundPart2();
         }
+    }
+
+    function beginRoundPart2() {
+        $scope.correctCityWeather = nextCityWeather;
+        $scope.correctCityIdx = nextCityIdx;
+        $scope.options = nextOptions.slice(0);  
+        $scope.loadNextQuestion();  
     }
 
     $scope.guess = function (answerIdx) {
