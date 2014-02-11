@@ -89,8 +89,8 @@ quicklist.controller('gameController', function($scope, $http){
         }
         nextCityIdx = Math.floor(Math.random() * numOptions);
         var nextCity = nextOptions[nextCityIdx].city;
-        getTodaysWeather(nextCity);
         shownCities.push(nextCity);
+        getTodaysWeather(nextCity);
     };  
     
     function addAnswer(idx) {
