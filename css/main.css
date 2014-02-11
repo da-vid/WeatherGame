@@ -168,6 +168,11 @@ a {
 	text-align: right;
 }
 
+.gameLoading {
+	position: relative;
+	top: -10px;
+}
+
 .prompt {
 	margin: auto;
 }
