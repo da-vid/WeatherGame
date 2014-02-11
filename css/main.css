@@ -15,7 +15,7 @@ src: url("fonts/Junction.otf") format("opentype");
 
 html, body {
 	height: 100%;
-	overflow: scroll;
+	/*overflow: scroll;*/
 	min-height: 460px;
 	position: relative;
 }
@@ -147,6 +147,7 @@ a {
 
 .buttonStart:hover {	
 	background-color: #ffc;
+	cursor: pointer;
 }
 
 .gamePanel {
@@ -262,6 +263,7 @@ a {
 	font-size: 16px;
 	letter-spacing: 2px;
 	border-radius: 10px;
+	cursor: pointer;
 }
 
 .buttonNextRound {
@@ -270,6 +272,7 @@ a {
 
 .buttonNextRound:hover {	
 	background-color: #eee;
+	cursor: pointer;
 }
 
 .buttonNextGame {	
@@ -278,6 +281,7 @@ a {
 
 .buttonNextGame:hover {	
 	background-color: #ffc;
+	cursor: pointer;
 }
 
 /****** Overriding Bootstrap Progress Bar ******/

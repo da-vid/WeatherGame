@@ -9,6 +9,7 @@ quicklist.controller('gameController', function($scope, $http){
                     "Denver", "Houston", "Las Vegas", "Los Angeles", "Memphis", "Minneapolis", "Miami", "New Orleans",
                      "New York", "Phoenix", "Salt Lake City", "San Diego", "San Francisco", "Tampa", "Washington DC"];
 
+    // Variables
     $scope.status = "";
     $scope.correctCityWeather = {};
     $scope.correctCityIdx =  0;
@@ -18,8 +19,8 @@ quicklist.controller('gameController', function($scope, $http){
     $scope.round = 0;
     $scope.score = 0;
     $scope.bestScore = 0;
-    ajaxLoading = true;
-    $scope.waitForAjax = true;        
+    $scope.waitForAjax = true;       
+    ajaxLoading = true;     
     guessTaken = false;
     nextCityIdx =  0; 
     nextCityWeather = {};
