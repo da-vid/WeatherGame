@@ -160,19 +160,22 @@ a {
 }
 
 .highScore {
+	position: relative;
 	font-size: medium;
-	letter-spacing: 1px
+	letter-spacing: 1px;
+	top: -26px;
+	right: 8px;
+	text-align: right;
 }
 
 .prompt {
 	margin: auto;
-	margin-top: 12px;
 }
 
 .message {
 	font-family: Junction, sans-serif;
 	font-size: medium;
-	margin: 15px 0 5px 0; 
+	margin: 0 0 5px 0; 
 }
 
 .weatherTemp {
@@ -215,7 +218,7 @@ a {
 }
 
 .option {
-	height: 2.0em;
+	height: 2.4em;
 	width: 70%;
 	display: table;
 	font-size: 20px;
