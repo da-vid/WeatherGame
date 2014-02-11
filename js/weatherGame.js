@@ -37,6 +37,8 @@ quicklist.controller('gameController', function($scope, $http){
     $scope.beginRound = function() {        
         $scope.round++;    
         $scope.gameState = "question";      
+        $scope.options.length = 0;          
+        guessTaken = false;      
         if(ajaxLoading) {
             $scope.waitForAjax = true;
         }
@@ -44,10 +46,8 @@ quicklist.controller('gameController', function($scope, $http){
     };
 
     function beginRoundPart2() {
-        guessTaken = false;
         $scope.correctCityWeather = nextCityWeather;
         $scope.correctCityIdx = nextCityIdx;
-        $scope.options.length = 0;
         $scope.options = nextOptions.slice(0);  
         $scope.loadNextQuestion();  
     }
@@ -140,5 +140,4 @@ quicklist.controller('gameController', function($scope, $http){
             //TODO more intelligent error handling
         });
     }
-
 });
