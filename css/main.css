@@ -81,6 +81,7 @@ a {
 	text-align: center;
 	border: 0;
 	border-color: black;
+	width: 95%;
 	max-width: 540px;
 	min-width: 320px;
 	height: 430px;
